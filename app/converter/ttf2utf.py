@@ -4,7 +4,7 @@ import yaml
 
 DEFAULTS_FILE = 'defaults.yaml'
 
-def load_defaults(yaml_path):
+def _load_defaults(yaml_path):
     path = os.path.join(yaml_path, DEFAULTS_FILE)
     with open(path, encoding='utf-8') as infile:
         default = yaml.load(infile)
@@ -18,7 +18,7 @@ def load_defaults(yaml_path):
 
 
 def load_rules(yaml_path):
-    default = load_defaults(yaml_path)
+    default = _load_defaults(yaml_path)
 
     files = [x for x in os.listdir(yaml_path) if x != DEFAULTS_FILE]
     paths = [os.path.join(yaml_path, x) for x in sorted(files)]

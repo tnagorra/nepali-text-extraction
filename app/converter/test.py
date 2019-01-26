@@ -22,11 +22,11 @@ class Test_all_vectors(unittest.TestCase):
             newkey = os.path.splitext(os.path.basename(vfilename))[0].lower()
             rule = self.all_rules[newkey]
             with open(vfilename, encoding='utf-8') as v_file:
+                print('Testing', newkey)
                 for line in v_file:
                     vec = line.split('\t')
                     vec[1] = vec[1].rstrip('\r\n')
                     converted = ttf2utf.convert_word(vec[0], rule)
-                    print (converted)
                     self.assertEqual(converted, vec[1],
                              'got {0} expected {1} for {2} in {3}'.format(converted, vec[1], vec[0], vfilename))
 

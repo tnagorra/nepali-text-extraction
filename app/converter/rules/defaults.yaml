@@ -2,7 +2,7 @@
 'pre-rules' : []
 
 'post-rules' : !!pairs
-  # autocorrect (flexible)
+# autocorrect (flexible)
 #  - 'ँँ': 'ँ'
 #  - 'ंं': 'ं'
 #  - 'ेे': 'े'
@@ -36,6 +36,10 @@
   # FU shift { infront of preceding half-consonants + consonant + matras . nasals
   # expand { to र्
   - '((?:.्)*.[ािीुूृेैोौंःँ]*?){': 'र्\1'
+
+  # Fix for some substitution like ् + र
+  - '([ाीुूृेैोौंःँ]+?)(्(.्)*[^्])': '\2\1'  # shift all matras behind next full consonant
+  - '्([ाीुूृेैोौंःँ]+?)((.्)*[^्])': '्\2\1'  # shift all matras behind next full consonant
 
   # FU shift nasal after matras
   - '([ंँ])([ािीुूृेैोौः]+)': '\2\1' 
