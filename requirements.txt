@@ -35,7 +35,7 @@ pep517==0.3
 pluggy==0.8.0
 power==1.4
 progress==1.4
-psutil==5.4.8
+psutil==5.6.6
 pycryptodome==3.7.1
 PyGObject==3.30.4
 pyparsing==2.3.0
