@@ -46,7 +46,7 @@ python-language-server==0.21.4
 python-libtorrent==1.1.11
 pytoml==0.1.20
 pytz==2018.7
-PyYAML==3.13
+PyYAML==5.4
 rarfile==3.0
 rebulk==1.0.0
 Reflector==2018.3.3.22.1.34
